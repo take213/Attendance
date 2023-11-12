@@ -1,0 +1,20 @@
+{% extends 'attendanceapp/base.html' %}
+{% block content %}
+
+<div class='header'>
+    <h1>ログイン</h1>
+</div>
+
+<form method='post'>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type='submit' value='ログイン'>
+</form>
+
+<p class='introduction'>アカウントをお持ちでない方は、以下から登録ください</p>
+
+<a href='{% url "register" %}'>新規登録</a>
+<br><br>
+<a href='{% url "top" %}'>戻る</a>
+
+{% endblock content %}

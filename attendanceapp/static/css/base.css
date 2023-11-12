@@ -1,0 +1,96 @@
+body{
+    background-color: aliceblue; 
+}
+
+.header{
+    background-color: lightblue;
+    padding: 10px;
+    border-radius: 10px 10px 0px 0px;
+    color: gray;
+    text-align: center;
+}
+
+
+.attendance-app-wrapper{
+    max-width: 530px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.action-wrapper{
+    display: flex;
+    font-size: 24px;
+    justify-content: space-between;
+    padding: 10px 20px;
+    border-top: 1px solid lightgray;
+    height:50px;
+    line-height:50px;
+}
+
+.edit-button{
+    color: green;
+    text-decoration: none;
+    vertical-align: middle; 
+}
+
+.delete-button{
+    color: red;
+    text-decoration: none;
+    vertical-align: middle; 
+}
+
+label{
+    display: block;
+}
+
+form{
+    padding: 20px;
+    font-size: 24px;
+}
+
+select{
+    font-size: 24px;
+}
+
+input{
+    border: 1px solid lightseagreen;
+    padding: 4px 10px;
+    background-color: white;
+    color: lightseagreen;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    transition: all 0.4s;
+}
+
+input:hover{
+    background-color: lightseagreen;
+    color: white;
+}
+
+#working-time{
+    font-size: 28px;
+    padding: 20px;
+}
+
+a{
+    padding: 20px;
+}
+
+#add-item{
+    display: flex;
+    justify-content: flex-end;
+}
+
+li{
+    font-size: 14px;
+}
+
+span.helptext{
+    font-size: 14px;
+}
+
+.introduction{
+    padding: 20px;
+}

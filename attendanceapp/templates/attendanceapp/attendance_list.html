@@ -1,0 +1,47 @@
+{% extends 'attendanceapp/base.html' %}
+{% block content %}
+
+<div class='header'>
+    <h1>{{request.user}}さんの勤怠登録</h1>
+</div>
+
+<a href='{% url "add-item" %}' id='add-item'>勤怠登録へ</a>
+<!-- <input type='submit' onclick=location.href='{% url "add-item" %}' value='勤怠登録へ'> -->
+
+<div class='actions-wrapper'>
+    {% for action in actions %}
+        <div class='action-wrapper'>
+        <p>
+            <div>
+            <!-- 見栄えのため、時間と分は2桁表示になるよう0埋め -->
+            {% if action.hour >= 10 and action.minute >= 10 %}
+                {{action.hour}}:{{action.minute}} {{action.state}}
+            {% elif action.minute >= 10 %}
+                0{{action.hour}}:{{action.minute}} {{action.state}}
+            {% elif action.hour >= 10 %}
+                {{action.hour}}:0{{action.minute}} {{action.state}}
+            {% else %}
+                0{{action.hour}}:0{{action.minute}} {{action.state}}
+            {% endif %}
+            </div>
+            <div>
+            <a href='{% url "edit-item" action.id %}' class='edit-button'>&#x1F58D;</a>
+            <a href='{% url "delete-item" action.id %}' class='delete-button'>x</a>
+            </div>
+        </p>
+        </div>
+    {% empty %}
+    <p id='working-time'>まだ本日の勤怠は登録されていません</p>
+    {% endfor %}
+</div>
+<hr>
+<p id='working-time'>{{ message }}</p>
+
+<div>
+    {% if request.user.is_authenticated %}
+    <a href='{% url "logout" %}'>ログアウト</a>
+    {% else %}
+    <a href='{% url "login" %}'>ログイン</a>
+    {% endif %}
+</div>
+{% endblock content %}

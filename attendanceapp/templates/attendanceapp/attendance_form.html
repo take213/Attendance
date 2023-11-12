@@ -1,0 +1,16 @@
+{% extends 'attendanceapp/base.html' %}
+{% block content %}
+
+<div class='header'>
+    <h1>勤怠の追加・編集</h1>
+</div>
+
+<form method='post'>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type='submit' value='追加'>
+</form>
+
+<a href='{% url "top" %}'>戻る</a>
+
+{% endblock content %}
